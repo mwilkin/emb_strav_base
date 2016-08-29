@@ -1,0 +1,6 @@
+{{#each model.starred as |segment|}}
+  {{segment-tile segment=segment}}
+  <br>
+{{/each}}
+<br>
+{{#link-to 'index'}}home{{/link-to}}

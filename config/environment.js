@@ -2,6 +2,12 @@
 
 module.exports = function(environment) {
   var ENV = {
+    firebase: {
+      apiKey: process.env.firebaseApiKey,
+      authDomain: process.env.firebaseAuthDomain,
+      databaseURL: process.env.firebaseDbURL,
+      storageBucket: process.env.firebaseBucket
+    },
     modulePrefix: 'strally',
     environment: environment,
     rootURL: '/',
