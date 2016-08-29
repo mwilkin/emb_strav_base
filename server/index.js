@@ -97,5 +97,75 @@ module.exports = function(app) {
           user: null
       })
     }
-  })
+  });
+
+  app.get("/api/user/effort/:effort_id", function(req, res){
+    console.log(req.params.effort_id)
+    if(req.isAuthenticated()){
+      var seg_id = parseInt(req.params.effort_id);
+      var options = {
+        host: "www.strava.com",
+        port: 443,
+        path: '/api/v3/segment_efforts/' + seg_id ,
+        method: "GET",
+        headers: {
+          Authorization: "Bearer " + req.user.token
+        }
+      };
+      var request = https.request(options, function(response){
+        var buffer = "";
+        response.on('data', (data) =>{
+          buffer += data;
+        });
+        response.on('end', function(){
+          res.send(JSON.parse(buffer));
+        })
+      })
+      request.end();
+      request.on('error', (e) => {
+        console.log(e);
+      })
+    } else {
+      res.json({
+          authenticated: false,
+          user: null
+      })
+    }
+  });
+
+  app.get("/api/user/segment/:segment_id/:start_date/:end_date", function(req, res){
+
+    if(req.isAuthenticated()){
+      var seg_id = parseInt(req.params.segment_id);
+      var start_date = req.params.start_date;
+      var end_date = req.params.end_date;
+      var options = {
+        host: "www.strava.com",
+        port: 443,
+        path: '/api/v3/segments/' + seg_id + "/all_efforts?athlete_id=" + req.user.id + "&start_date_local=" + start_date + "&end_date_local=" + end_date ,
+        method: "GET",
+        headers: {
+          Authorization: "Bearer " + req.user.token
+        }
+      };
+      var request = https.request(options, function(response){
+        var buffer = "";
+        response.on('data', (data) =>{
+          buffer += data;
+        });
+        response.on('end', function(){
+          res.send(JSON.parse(buffer));
+        })
+      })
+      request.end();
+      request.on('error', (e) => {
+        console.log(e);
+      })
+    } else {
+      res.json({
+          authenticated: false,
+          user: null
+      })
+    }
+  });
 };
