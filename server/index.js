@@ -5,7 +5,8 @@ var passport = require('passport'),
     express = require('express'),
     session = require('express-session'),
     cookieParser = require('cookie-parser')
-    bodyParser = require('body-parser');
+    bodyParser = require('body-parser'),
+    https = require('https');
 
 module.exports = function(app) {
   app.use(express.static('public'));
@@ -51,10 +52,6 @@ module.exports = function(app) {
     }
   );
 
-  app.get('/protected', function(req, res) {
-    res.send(util.inspect(req.session))
-  });
-
   app.get("/api/user", function (req,res) {
     if (req.isAuthenticated()) {
         res.json({
@@ -68,4 +65,37 @@ module.exports = function(app) {
         })
     }
   });
+
+  app.get("/api/user/starred", function(req, res){
+    console.log(req.user.token)
+    if(req.isAuthenticated()){
+      var options = {
+        host: "www.strava.com",
+        port: 443,
+        path: '/api/v3/athletes/' + req.user.id + '/segments/starred',
+        method: "GET",
+        headers: {
+          Authorization: "Bearer " + req.user.token
+        }
+      }
+      var request = https.request(options, function(response){
+        var buffer = "";
+        response.on('data', (data) =>{
+          buffer += data;
+        });
+        response.on('end', function(){
+          res.send(JSON.parse(buffer));
+        })
+      })
+      request.end();
+      request.on('error', (e) => {
+        process.stdout.write(e);
+      })
+    } else {
+      res.json({
+          authenticated: false,
+          user: null
+      })
+    }
+  })
 };
