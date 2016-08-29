@@ -25,6 +25,12 @@ module.exports = function(environment) {
     // ENV.APP.LOG_TRANSITIONS = true;
     // ENV.APP.LOG_TRANSITIONS_INTERNAL = true;
     // ENV.APP.LOG_VIEW_LOOKUPS = true;
+
+    ENV.stravaSecret = process.env.stravaSecret;
+    ENV.stravaAccessToken = process.env.stravaAccessToken;
+    ENV.stravaClientID = process.env.stravaClientID;
+    ENV.stravaCallbackURL = process.env.stravaCallbackURL;
+    ENV.sessionSecret = process.env.sessionSecret;
   }
 
   if (environment === 'test') {

@@ -39,6 +39,18 @@
     "ember-load-initializers": "^0.5.1",
     "ember-resolver": "^2.0.3",
     "ember-welcome-page": "^1.0.1",
-    "loader.js": "^4.0.1"
+    "emberfire": "2.0.1",
+    "glob": "^4.5.3",
+    "loader.js": "^4.0.1",
+    "morgan": "^1.7.0"
+  },
+  "dependencies": {
+    "babel-preset-es2015": "^6.14.0",
+    "body-parser": "^1.15.2",
+    "cookie-parser": "^1.4.3",
+    "express": "^4.14.0",
+    "logger": "0.0.1",
+    "method-override": "^2.3.6",
+    "session": "^0.1.0"
   }
 }
