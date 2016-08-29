@@ -1,14 +1,16 @@
-<table cellspacing=0>
-  <tr>
-    <th><div>Segment Name</div></th>
-    <th><div>Distance</div></th>
-  </tr>
-  {{#each raceBucket.segments as |segment|}}
+{{#if raceBucket.segments}}
+  <table cellspacing=0>
     <tr>
-      <td><div>{{segment.name}}</div></td>
-      <td><div>{{segment.distance}} Meters</div></td>
-      <td><div><button {{action 'removeFromRace' segment}}>Remove</button></div></td>
+      <th><div>Segment Name</div></th>
+      <th><div>Distance</div></th>
+      <th></th>
     </tr>
-  {{/each}}
-
-</table>
+    {{#each raceBucket.segments as |segment|}}
+      <tr>
+        <td><div>{{segment.name}}</div></td>
+        <td><div>{{segment.distance}} Meters</div></td>
+        <td><div><button {{action 'removeFromRace' segment}}>Remove</button></div></td>
+      </tr>
+    {{/each}}
+  </table>
+{{/if}}

@@ -16,7 +16,7 @@ tr:nth-child(1):hover {
 
 th {
   text-align: left;
-  /*border-bottom-style: double;*/
+  border-bottom-style: double;
   margin-right: 40px;
 }
 
