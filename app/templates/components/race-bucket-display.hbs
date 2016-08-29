@@ -1,0 +1,12 @@
+<table cellspacing=0 cellpadding=5>
+  <tr>
+    <th>Segment Name</th>
+    <th>Distance</th>
+  </tr>
+  {{#each raceBucket.segments as |segment|}}
+    <tr>
+      <td>{{segment.name}}</td>
+      <td>{{segment.distance}} Meters</td>
+    </tr>
+  {{/each}}
+</table>
