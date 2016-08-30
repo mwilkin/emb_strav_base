@@ -6,7 +6,6 @@ export default Ember.Component.extend({
     addToRace(item) {
       if(!this.get('raceBucket').get('segments').includes(item)) {
         this.get('raceBucket').add(item);
-        console.log(this.get('raceBucket').get('segments'))
       }
     }
   }
