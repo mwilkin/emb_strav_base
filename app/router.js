@@ -10,6 +10,7 @@ Router.map(function() {
   this.route('login');
   this.route('starred');
   this.route('home');
+  this.route('logout');
 });
 
 export default Router;

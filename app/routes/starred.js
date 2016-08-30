@@ -11,6 +11,7 @@ export default Ember.Route.extend({
   actions: {
     createRace(){
       var segs = this.get('raceBucket');
+
     }
   }
 });

@@ -1,24 +1,33 @@
 {{#if raceBucket.segments}}
-  <table cellspacing=0>
+  <h3>Create Race</h3>
+  <table class="table table-striped">
     <tr>
       <th><div>Segment Name</div></th>
       <th><div>Distance</div></th>
-      <th></th>
+      <th>Actions</th>
     </tr>
     {{#each raceBucket.segments as |segment|}}
       <tr>
         <td><div>{{segment.name}}</div></td>
         <td><div>{{segment.distance}} Meters</div></td>
-        <td><div><button {{action 'removeFromRace' segment}}>Remove</button></div></td>
+        <td><div><button class="btn-danger btn-sm" {{action 'removeFromRace' segment}}>Remove</button></div></td>
       </tr>
     {{/each}}
   </table>
-  <h3>Create Race</h3>
-  <label for="name">Add a name for the race</label>
-  {{input class="form-control" value=name id="name"}}
-  <label for="start">Start Date</label>
-  {{input class="form-control" type="date" value=start id="start"}}
-  <label for="end">End Date</label>
-  {{input class="form-control" type="date" value=end id="end"}}
-  <button class="" {{action 'createRace'}}>Create Race</button>
+  <div class="form-group">
+    <label for="name">Add a name for the race</label>
+    {{input class="form-control" value=name id="name"}}
+  </div>
+  <div class="form-group">
+    <label for="start">Start Date</label>
+    {{input class="form-control" type="date" value=start id="start"}}
+  </div>
+  <div class="form-group">
+      <label for="end">End Date</label>
+      {{input class="form-control" type="date" value=end id="end"}}
+  </div>
+  <br>
+  <div class="form-group">
+    <button class="" {{action 'createRace'}}>Create Race</button>
+  </div>
 {{/if}}

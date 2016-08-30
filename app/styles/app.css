@@ -1,32 +1,3 @@
-table {
-  border-bottom: 1px solid black
-
-}
-
-tr:hover {
-  background-color: lightgray;
-  cursor: pointer;
-}
-
-tr:nth-child(1):hover {
-  background-color: white;
-  cursor: auto;
-}
-
-th {
-  text-align: left;
-  border-bottom-style: double;
-  margin-right: 40px;
-}
-
-th div, td div {
-  margin-right: 2em;
-}
-
-button {
-  cursor: pointer;
-}
-
 .headerDiv {
   border-bottom-style: double;
 }
@@ -36,24 +7,25 @@ button {
   border-color: #ffffff;
 }
 .navbar-default .navbar-brand {
-  color: #ffae89;
+  color: #faedca;
 }
 .navbar-default .navbar-brand:hover,
 .navbar-default .navbar-brand:focus {
-  color: #000000;
+  color: #423e37;
 }
 .navbar-default .navbar-text {
-  color: #ffae89;
+  color: #faedca;
 }
 .navbar-default .navbar-nav > li > a {
-  color: #ffae89;
+  color: #faedca;
 }
 .navbar-default .navbar-nav > li > a:hover,
 .navbar-default .navbar-nav > li > a:focus {
   color: #000000;
 }
 .navbar-default .navbar-nav > li > .dropdown-menu {
-  background-color: #fc4c02;
+  /*background-color: #fc4c02;*/
+  background-color: #faedca;
 }
 .navbar-default .navbar-nav > li > .dropdown-menu > li > a {
   color: #ffae89;
@@ -105,6 +77,17 @@ button {
   color: #000000;
 }
 
+.btn-secondary {
+  background: white;
+  border: 1px solid;
+  border-radius: 0px
+}
+
+.btn-danger {
+  border-radius: 0px;
+  border: 1px solid;
+}
+
 @media (max-width: 767px) {
   .navbar-default .navbar-nav .open .dropdown-menu > li > a {
     color: #ffae89;
@@ -119,3 +102,4 @@ button {
     color: #000000;
     background-color: #ffffff;
   }
+}
