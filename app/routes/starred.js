@@ -13,9 +13,6 @@ export default Ember.Route.extend({
     createRace(params){
       var segmentList = this.get('raceBucket').get('segments');
       var store = this.store;
-      // params.users = [];
-      // params.segments = [];
-      // params.creatorId = this.get('userService.user.id');
       console.log(params)
       var newRace = store.createRecord('race', params);
       newRace.save().then(function(savedRace) {

@@ -12,6 +12,7 @@
       </div>
       <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
         <ul class="nav navbar-nav">
+          <li>{{#link-to 'races'}}races{{/link-to}}</li>
           {{#if model.user}}
           <li>{{#link-to 'starred'}}New Race{{/link-to}}</li>
           {{/if}}
