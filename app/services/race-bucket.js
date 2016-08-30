@@ -3,8 +3,6 @@ import Ember from 'ember';
 export default Ember.Service.extend({
   segments: [],
 
-
-
   add(item){
     this.get('segments').pushObject(item);
   },
@@ -15,5 +13,10 @@ export default Ember.Service.extend({
 
   reset(){
     this.set('segments', []);
+  },
+
+  count(){
+    this.get('segements').length;
   }
+
 });
