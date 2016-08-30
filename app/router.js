@@ -11,6 +11,7 @@ Router.map(function() {
   this.route('starred');
   this.route('home');
   this.route('logout');
+  this.route('races');
 });
 
 export default Router;
