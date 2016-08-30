@@ -13,6 +13,12 @@
       </tr>
     {{/each}}
   </table>
-  {{input value=name id="name"}}
+  <h3>Create Race</h3>
+  <label for="name">Add a name for the race</label>
+  {{input class="form-control" value=name id="name"}}
+  <label for="start">Start Date</label>
+  {{input class="form-control" type="date" value=start id="start"}}
+  <label for="end">End Date</label>
+  {{input class="form-control" type="date" value=end id="end"}}
   <button class="" {{action 'createRace'}}>Create Race</button>
 {{/if}}
