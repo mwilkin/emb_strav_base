@@ -1,3 +1,5 @@
 <li>
-  <button class="btn-secondary btn-sm" {{action 'enterRace' race}}> compete in this race</button> {{race.name}}
+  <button class="btn-secondary btn-sm btn-enterRace" {{action 'enterRace' race}}>Join</button>
+  {{#link-to 'segment' race.id class="btn-secondary btn-sm btn-viewRace"}}View{{/link-to}}
+  {{race.name}}
 </li>

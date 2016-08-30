@@ -140,6 +140,40 @@ module.exports = function(app) {
     }
   });
 
+  app.get("/api/user/segment/:segment_id", function(req, res){
+    console.log(req.params.segment_id)
+    if(req.isAuthenticated()){
+      var seg_id = parseInt(req.params.segment_id);
+      var options = {
+        host: "www.strava.com",
+        port: 443,
+        path: '/api/v3/segments/' + seg_id,
+        method: "GET",
+        headers: {
+          Authorization: "Bearer " + req.user.token
+        }
+      };
+      var request = https.request(options, function(response){
+        var buffer = "";
+        response.on('data', (data) =>{
+          buffer += data;
+        });
+        response.on('end', function(){
+          res.send(JSON.parse(buffer));
+        })
+      })
+      request.end();
+      request.on('error', (e) => {
+        console.log(e);
+      })
+    } else {
+      res.json({
+          authenticated: false,
+          user: null
+      })
+    }
+  });
+
   app.get("/api/user/segment/:segment_id/:start_date/:end_date", function(req, res){
 
     if(req.isAuthenticated()){

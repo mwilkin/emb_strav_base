@@ -12,6 +12,7 @@ Router.map(function() {
   this.route('home');
   this.route('logout');
   this.route('races');
+  this.route('segment', {path: '/races/:race_id/segment/'});
 });
 
 export default Router;

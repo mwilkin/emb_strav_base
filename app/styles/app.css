@@ -25,10 +25,10 @@
 }
 .navbar-default .navbar-nav > li > .dropdown-menu {
   /*background-color: #fc4c02;*/
-  background-color: #faedca;
+  background-color: #ffffff;
 }
 .navbar-default .navbar-nav > li > .dropdown-menu > li > a {
-  color: #ffae89;
+  color: #fc4c02;
 }
 .navbar-default .navbar-nav > li > .dropdown-menu > li > a:hover,
 .navbar-default .navbar-nav > li > .dropdown-menu > li > a:focus {
@@ -86,6 +86,26 @@
 .btn-danger {
   border-radius: 0px;
   border: 1px solid;
+}
+
+.race-list {
+  list-style: none;
+}
+
+.race-list li {
+  margin-top: 1.5em;
+}
+
+.btn-enterRace {
+  background-color: #29335C;
+  color: #FAEDCA;
+  font-weight: bold;
+}
+
+.btn-viewRace {
+  background-color: #29335C;
+  color: #FAEDCA;
+  font-weight: bold;
 }
 
 @media (max-width: 767px) {
