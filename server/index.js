@@ -66,6 +66,13 @@ module.exports = function(app) {
     }
   });
 
+  app.get('/api/auth/strava/logout', function(req, res){
+    if(req.isAuthenticated()){
+      req.logout();
+      res.redirect('/');
+    }
+  })
+
   app.get("/api/user/starred", function(req, res){
     console.log(req.user.token)
     if(req.isAuthenticated()){
