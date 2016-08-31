@@ -1,6 +1,6 @@
 <h2>what race would you like to join?</h2>
-<ul class="race-list">
-  {{#each model as |race|}}
-    {{race-tile race=race}}
+<ul>
+  {{#each model.races as |race|}}
+    {{race-tile race=race enterRace='enterRace'}}
   {{/each}}
 </ul>
