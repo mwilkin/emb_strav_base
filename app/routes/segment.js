@@ -2,23 +2,21 @@ import Ember from 'ember';
 
 export default Ember.Route.extend({
   model(params){
-    var results = [];
     var store = this.store;
-    var race = store.findRecord('race', params.race_id);
-    race.then(function(){
-      var segments = race.get('segments');
-      segments.forEach(function(segment){
-        var tempSeg = store.findRecord('segment', segment.id);
-        tempSeg.then(function(segmentResult){
-          Ember.$.get("/api/user/segment/" + segmentResult.get("ssegid")).then(function(response){
-            results.push(response);
-          });
+    return store.query('segment', { orderBy: 'race', equalTo: params.race_id}).then(function(segments) {
+      var results = [];
+      var promises = [];
+      for(var segment of segments.toArray()) {
+        promises.push(Ember.$.getJSON("/api/user/segment/" + segment.get("ssegid")));
+      }
+
+      return Promise.all(promises).then(function(responses){
+        responses.forEach(function(response){
+          results.push(response);
         });
-
+        return results;
       });
-    }).then(function(){
-      return results;
-    });
 
+    });
   }
 });
