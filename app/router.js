@@ -13,6 +13,7 @@ Router.map(function() {
   this.route('logout');
   this.route('races');
   this.route('segment', {path: '/races/:race_id/segment/'});
+  this.route('myraces');
 });
 
 export default Router;

@@ -1,7 +1,13 @@
 # Strally
 
 This README outlines the details of collaborating on this Ember application.
-A short introduction of this app could easily go here.
+
+## Specifications
+
+### Every Page
+| Behavior | Sample Input  | Sample Output |
+| :------------- | :------------- |
+| A the webpage   | Item Two       |
 
 ## Prerequisites
 
