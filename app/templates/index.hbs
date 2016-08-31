@@ -1,8 +1,7 @@
 {{#if model.user}}
-  <p>Hello {{model.user.displayName}}</p>
-  {{model.user.token}}
+  <h2>Hello {{model.user.displayName}}</h2>
+  <h3>Welcome to Strally</h3>
+  <h4 style="text-indent: 50px;">This is a site where you can challenge your friends to compete with you in a series of segment challenges! All you need to do is star the segments in strava you wish to include in a race.  Then come here and add the segments and the time of your race</h4>
 {{else}}
   <p>{{#link-to 'login'}}<img src="assets/images/ConnectWithStrava2x.png" alt="log in with strava button">{{/link-to}}</p>
 {{/if}}
-<br>
-{{#link-to 'starred'}}your starred segments{{/link-to}}
