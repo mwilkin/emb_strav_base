@@ -16,7 +16,7 @@ export default Ember.Service.extend({
   },
 
   count(){
-    this.get('segements').length;
+    return this.get('segements').length;
   }
 
 });

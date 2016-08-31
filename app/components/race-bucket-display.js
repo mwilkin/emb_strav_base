@@ -18,7 +18,7 @@ export default Ember.Component.extend({
         creatorId: this.get('userService.user.id'),
         // creatorId: this.get('userService').get('user.id'),
         // segments: this.get('raceBucket').get('segments'),
-      }
+      };
       this.sendAction('createRace', params);
     }
   }
