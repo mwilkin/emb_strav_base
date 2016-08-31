@@ -11,6 +11,12 @@ export default Ember.Route.extend({
       racesByCurrentUser: this.store.query('race', {
         orderBy: 'creatorId',
         equalTo: userId
+      }),
+      currentUser: this.store.query('user', {
+        orderBy: 'userid',
+        equalTo: userId,
+      }).then(function(user) {
+        return user.get('firstObject');
       })
     });
   },

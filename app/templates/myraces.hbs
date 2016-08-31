@@ -1,4 +1,6 @@
+{{log model.currentUser}}
+{{model.currentUser.userid}}
 <h2>list of races you're racing in</h2>
-{{my-races-lists races=model.races }}
+{{my-races-lists races=model.currentUser.races}}
 <h2>list of races you created</h2>
 {{my-races-lists races=model.racesByCurrentUser}}
