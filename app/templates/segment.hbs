@@ -1,1 +1,5 @@
-{{outlet}}
+Segments Page:
+{{log model}}
+{{#each model.segments as |segment|}}
+  {{segment-listitem segment=segment}}
+{{/each}}
