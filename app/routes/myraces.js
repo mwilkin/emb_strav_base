@@ -23,6 +23,9 @@ export default Ember.Route.extend({
   actions: {
     delete(race) {
       race.destroyRecord();
+    },
+    leave(race) {
+      race.destroyRecord();
     }
   }
 });
