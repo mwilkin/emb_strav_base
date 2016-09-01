@@ -2,4 +2,17 @@
   <h1>{{race.name}}</h1>
   <h3>Starts: {{race.start}}</h3>
   <h3>Ends: {{race.end}}</h3>
+  <h4>Created By {{race.creatorId}}</h4>
+  <h4>Participants:</h4>
+  <ul>
+    {{#each race.users as |user|}}
+      <li>{{user.userid}}</li>
+    {{/each}}
+  </ul>
+  <h4>Segments</h4>
+  <ul>
+    {{#each race.segments as |segment|}}
+      <li>{{segment.ssegid}}</li>
+    {{/each}}
+  </ul>
 </div>

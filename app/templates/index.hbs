@@ -1,8 +1,5 @@
 {{#if model.user}}
-  <p>Hello {{model.user.displayName}}</p>
-  {{model.user.token}}
+  {{landing-page-logged-in user=model.user}}
 {{else}}
   <p>{{#link-to 'login'}}<img src="assets/images/ConnectWithStrava2x.png" alt="log in with strava button">{{/link-to}}</p>
 {{/if}}
-<br>
-{{#link-to 'starred'}}your starred segments{{/link-to}}
