@@ -20,4 +20,9 @@ export default Ember.Route.extend({
       })
     });
   },
+  actions: {
+    delete(race) {
+      race.destroyRecord();
+    }
+  }
 });

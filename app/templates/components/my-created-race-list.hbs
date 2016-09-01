@@ -1,0 +1,6 @@
+{{#each races as |race|}}
+  <li>{{race.name}}, by {{race.creatorId}}
+    <button {{action 'delete' race}}>Delete Race</button>
+  </li>
+{{/each}}
+{{userId}}
