@@ -14,6 +14,7 @@ Router.map(function() {
   this.route('races');
   this.route('segment', {path: '/races/:race_id/segment/'});
   this.route('myraces');
+  this.route('racedetail', {path: '/racedetail/:race_id'});
 });
 
 export default Router;
