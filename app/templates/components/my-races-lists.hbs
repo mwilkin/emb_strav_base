@@ -1,5 +1,6 @@
-{{#each races as |race|}}
-  <li>{{race.name}}, by {{race.creatorId}}</li>
-{{/each}}
-
+<ul>
+  {{#each races as |race|}}
+    <li>{{#link-to 'racedetail' race.id}}{{race.name}}{{/link-to}}, by {{race.creatorId}}{{race.id}}</li>
+  {{/each}}
+</ul>
 {{userId}}
