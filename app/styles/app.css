@@ -137,3 +137,8 @@
   height: auto;
   float: left;
 }
+
+#icon {
+  width: 50px;
+  height: auto;
+}
