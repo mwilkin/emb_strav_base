@@ -28,6 +28,7 @@ export default Ember.Route.extend({
           });
         });
       });
+      this.get('raceBucket').get('reset')
       this.transitionTo('index');
 
     }
