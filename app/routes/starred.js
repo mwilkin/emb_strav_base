@@ -30,7 +30,7 @@ export default Ember.Route.extend({
           });
         });
       });
-      this.get('raceBucket').get('reset')
+      this.get('raceBucket').reset();
       this.transitionTo('index');
 
     }
