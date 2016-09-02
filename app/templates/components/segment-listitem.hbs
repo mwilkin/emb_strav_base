@@ -1,1 +1,8 @@
-Segment Name: {{segment.name}}
+<div class="row">
+  <div class="col-md-2 seg-det-tile">
+    <p>{{segment.name}}</p>
+  </div>
+  <div class="col-md-10 seg-det-tile">
+    <img src="http://maps.googleapis.com/maps/api/staticmap?sensor=false&size=300x300&path=weight:3%7Ccolor:red%7Cenc:{{segment.map.polyline}}&key=AIzaSyDNTpV8qLQVCrcDjsIsmVz95KFd4kAzsEQ" alt="{{segment.name}}">
+  </div>
+</div>
