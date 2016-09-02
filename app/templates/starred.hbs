@@ -1,9 +1,9 @@
+<h4>Add the segments you would like to be in your race</h4>
+<hr>
+<div class="row">
 {{#each model.starred as |segment|}}
   {{segment-tile segment=segment}}
-  <br>
 {{/each}}
+</div>
 <br>
 {{race-bucket-display class='race-bucket-display' createRace='createRace'}}
-
-{{outlet}}
-{{#link-to 'index'}}home{{/link-to}}
