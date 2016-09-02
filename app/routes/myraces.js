@@ -19,7 +19,8 @@ export default Ember.Route.extend({
       }).then(function(user) {
         userFromService.set('userFirebase', user.get('firstObject'));
         return user.get('firstObject');
-      })
+      }),
+      userName: this.get('userService').get('user').displayName,
     });
   },
   actions: {

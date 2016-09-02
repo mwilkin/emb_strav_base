@@ -16,9 +16,9 @@ export default Ember.Component.extend({
         users: [],
         segments: [],
         creatorId: this.get('userService.user.id'),
-        // creatorId: this.get('userService').get('user.id'),
-        // segments: this.get('raceBucket').get('segments'),
+        creatorName: this.get('userService.user.displayName'),
       };
+      console.log(this.get('userService.user.displayName'))
       this.sendAction('createRace', params);
     }
   }

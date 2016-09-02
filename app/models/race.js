@@ -5,6 +5,7 @@ export default DS.Model.extend({
   start: DS.attr(),
   end: DS.attr(),
   creatorId: DS.attr(),
+  creatorName: DS.attr(),
   segments: DS.hasMany('segment', {async: true}),
   users: DS.hasMany('user', {async: true})
 });

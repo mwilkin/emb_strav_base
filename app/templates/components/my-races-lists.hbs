@@ -1,7 +1,6 @@
 <ul>
   {{#each races as |race|}}
-    <li>{{#link-to 'racedetail' race.id}}{{race.name}}{{/link-to}}, by {{race.creatorId}}{{race.id}} <button class="btn-warning btn-sm"{{action 'leave' race}}>Leave Race</button>
+    <li>{{#link-to 'racedetail' race.id}}{{race.name}}{{/link-to}}, created by {{race.creatorName}} <button class="btn-warning btn-sm"{{action 'leave' race}}>Leave Race</button>
     </li>
   {{/each}}
 </ul>
-{{userId}}

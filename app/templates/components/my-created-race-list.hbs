@@ -1,6 +1,5 @@
 {{#each races as |race|}}
-  <li>{{race.name}}, by {{race.creatorId}}
+  <li>{{race.name}}, by {{race.creatorName}}
     <button class="btn btn-danger btn-sm"{{action 'delete' race}}>Delete Race</button>
   </li>
 {{/each}}
-{{userId}}
