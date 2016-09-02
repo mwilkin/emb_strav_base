@@ -17,7 +17,8 @@ export default Ember.Route.extend({
   actions:  {
     enterRace(race) {
       var params = {
-        userid:  this.get('userService').get('user.id')
+        userid:  this.get('userService').get('user.id'),
+        userName: this.get('userService.user.displayName')
       };
       var userExistenceSum = 0;
       var currentUser;
