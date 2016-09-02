@@ -116,6 +116,10 @@
   height: 100%;
 }
 
+.seg-det-tile {
+  margin-top: 10px;
+}
+
 @media (max-width: 767px) {
   .navbar-default .navbar-nav .open .dropdown-menu > li > a {
     color: #ffae89;
