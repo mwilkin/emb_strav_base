@@ -1,8 +1,15 @@
 <div class="row">
-  <div class="col-md-2 seg-det-tile">
-    <p>{{segment.name}}</p>
+  <div class="col-md-4 seg-det-tile">
+    <h3>{{segment.name}}</h3>
+    <p>{{segment.city}}, {{segment.state}}</p>
+    <p>Distance (M): {{segment.distance}}</p>
+
+    <h4>Climbing</h4>
+    <p>Elevation Gain (M): {{segment.total_elevation_gain}}</p>
+    <p>Average Grade: {{segment.average_grade}}</p>
+    <p>Climb Category: {{segment.climb_category}}</p>
   </div>
-  <div class="col-md-10 seg-det-tile">
+  <div class="col-md-8 seg-det-tile">
     <img src="http://maps.googleapis.com/maps/api/staticmap?sensor=false&size=300x300&path=weight:3%7Ccolor:red%7Cenc:{{segment.map.polyline}}&key=AIzaSyDNTpV8qLQVCrcDjsIsmVz95KFd4kAzsEQ" alt="{{segment.name}}">
   </div>
 </div>
